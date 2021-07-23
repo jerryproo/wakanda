@@ -23,7 +23,7 @@ public class MainController {
     private MyAnniversaryService myAnniversaryService;
 
     @GetMapping("anni")
-    Result getAnniversary() {
+    Result<MyAnniversaryDTO> getAnniversary() {
         final MyAnniversaryDTO dto = myAnniversaryService.getByCode(MyAnniversaryEnum.FIRST_DAY.getCode());
         return ResultUtil.successData(dto);
     }
