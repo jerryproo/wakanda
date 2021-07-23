@@ -9,6 +9,7 @@ import com.jerrypro.common.util.StringConstantUtil;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -30,6 +31,7 @@ public class BaseEntity implements Serializable {
     /**
      *
      */
+    @Id
     private String id;
 
     /**
