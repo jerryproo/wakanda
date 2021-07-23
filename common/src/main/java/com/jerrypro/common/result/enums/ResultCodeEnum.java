@@ -20,6 +20,8 @@ public enum ResultCodeEnum {
      * failed
      */
     FAILURE(1000, "failure"),
+
+    TIME_LIMIT_OVER(4001, "超时"),
     ;
 
     /**

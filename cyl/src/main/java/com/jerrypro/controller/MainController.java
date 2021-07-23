@@ -1,10 +1,15 @@
 package com.jerrypro.controller;
 
-import com.jerrypro.common.entity.MyAnniversaryDTO;
 import com.jerrypro.common.result.dto.Result;
+import com.jerrypro.common.result.util.ResultUtil;
+import com.jerrypro.entity.MyAnniversaryDTO;
+import com.jerrypro.enums.MyAnniversaryEnum;
+import com.jerrypro.service.MyAnniversaryService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @author jerrypro
@@ -14,10 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("cyl/main")
 public class MainController {
 
+    @Resource
+    private MyAnniversaryService myAnniversaryService;
+
     @GetMapping("anni")
-    Result<MyAnniversaryDTO> getAnniversary() {
-
-        return null;
-
+    Result getAnniversary() {
+        final MyAnniversaryDTO dto = myAnniversaryService.getByCode(MyAnniversaryEnum.FIRST_DAY.getCode());
+        return ResultUtil.successData(dto);
     }
 }

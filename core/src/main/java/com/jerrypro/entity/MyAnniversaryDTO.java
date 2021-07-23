@@ -1,8 +1,7 @@
-package com.jerrypro.common.entity;
+package com.jerrypro.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
 import java.time.LocalDateTime;
 

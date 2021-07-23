@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jerrypro.mapper.MyAnniversaryMapper">
+    <sql id="baseSql">
+        id,
+        record_code,
+        record_name,
+        record_time,
+        remark,
+        create_by,
+        create_time,
+        update_by,
+        update_time,
+        del_flag
+    </sql>
+
+    <select id="getByCode" resultType="com.jerrypro.entity.MyAnniversaryDTO">
+        select
+        <include refid="baseSql"/>
+        from my_anniversary
+        where record_code = #{code}
+    </select>
+</mapper>

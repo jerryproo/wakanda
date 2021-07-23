@@ -1,4 +1,5 @@
 rootProject.name = 'wakanda'
 include 'common'
 include 'cyl'
+include 'core'
 
