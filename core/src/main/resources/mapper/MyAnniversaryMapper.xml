@@ -19,5 +19,6 @@
         <include refid="baseSql"/>
         from my_anniversary
         where record_code = #{code}
+        limit 1
     </select>
 </mapper>
